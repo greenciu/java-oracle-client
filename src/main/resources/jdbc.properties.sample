@@ -1,0 +1,3 @@
+jdbc.url=jdbc:oracle:thin:@host:1521/sid
+jdbc.username=username
+jdbc.password=password

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration debug="false" scan="true" scanPeriod="5 seconds">
+	 
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+
+	<!-- To enable JMX Management -->
+	<jmxConfigurator />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">		
+		<encoder>			
+			<!-- <pattern>%-5.5p | %c | %m%n</pattern>  -->
+			<!-- <pattern>%d{yyyy-MM-dd HH:mm:ss} | %-5.5p | %-20.20C{1} | %-20.20M %4L | %m%n</pattern> -->
+			<pattern>%d{HH:mm:ss} | %-5.5p | %-30.30t | %-10.10c | %-20.20C{1} | %-10.10M %4L | %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="org.springframework.beans" level="WARN" />
+	<logger name="net.sf.json.xml.XMLSerializer" level="WARN"/>
+	<logger name="org.apache.camel.component.exec.ExecProducer" level="WARN"/>
+	<logger name="org.apache.sshd" level="WARN"/>
+	<logger name="org.apache.sshd.client.keyverifier" level="ERROR"/>
+	
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+	</root>
+	
+</configuration>

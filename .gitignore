@@ -1,0 +1,10 @@
+## Eclipse
+.classpath
+.project
+.settings/
+.springBeans
+target/
+
+jdbc.properties
+test.properties
+
